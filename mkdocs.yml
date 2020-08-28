@@ -1,0 +1,12 @@
+site_name: Dict+
+
+
+theme:
+  
+  nav:
+    - Installation: index.md
+    - Examples: about.md
+  palette:
+    primary: red
+    accent: red
+  name: 'material'
