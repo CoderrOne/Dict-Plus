@@ -5,4 +5,4 @@ Resulting in saving you massive amounts of code. All written carefully to avoid 
 
 This powerful, non-intrusive module that re-defines the way you work with your dictionaries.
 
-For more information please vist the [site](https://coderrone.github.io/Dict-Plus/)
+For more information please visit the [site](https://coderrone.github.io/Dict-Plus/)
