@@ -72,7 +72,7 @@
     <a href=".." title="Dict Plus" class="md-header-nav__button md-logo" aria-label="Dict Plus">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7h4a2 2 0 012 2v6a2 2 0 01-2 2H9V7m2 2v6h2V9h-2M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5m2 0v14h14V5H5z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v10h4a2 2 0 002-2V9a2 2 0 00-2-2H9m2 2h2v6h-2V9z"/></svg>
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -159,7 +159,7 @@
     <a href=".." title="Dict Plus" class="md-nav__button md-logo" aria-label="Dict Plus">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7h4a2 2 0 012 2v6a2 2 0 01-2 2H9V7m2 2v6h2V9h-2M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5m2 0v14h14V5H5z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 7v10h4a2 2 0 002-2V9a2 2 0 00-2-2H9m2 2h2v6h-2V9z"/></svg>
 
     </a>
     Dict Plus
@@ -295,13 +295,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
-    Argument(s):
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#returns" class="md-nav__link">
     Return(s)
   </a>
@@ -320,13 +313,6 @@
   
     <nav class="md-nav" aria-label="DictPlus.changed()">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#arguments_1" class="md-nav__link">
-    Argument(s):
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#connection-arguments" class="md-nav__link">
@@ -367,13 +353,6 @@
   
     <nav class="md-nav" aria-label="DictPlus.add()">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#arguments_2" class="md-nav__link">
-    Argument(s)
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#returns_2" class="md-nav__link">
@@ -453,13 +432,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#arguments" class="md-nav__link">
-    Argument(s):
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#returns" class="md-nav__link">
     Return(s)
   </a>
@@ -478,13 +450,6 @@
   
     <nav class="md-nav" aria-label="DictPlus.changed()">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#arguments_1" class="md-nav__link">
-    Argument(s):
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#connection-arguments" class="md-nav__link">
@@ -527,13 +492,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#arguments_2" class="md-nav__link">
-    Argument(s)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#returns_2" class="md-nav__link">
     Return(s)
   </a>
@@ -574,46 +532,30 @@
 <h2 id="first-steps">First Steps</h2>
 <p>First off; you must require the module. In all the examples the module will be refered to <code>DictPlus</code>. You must create a variable for the module by requiring the module.</p>
 <p>The dictionary we will use will be:</p>
-<pre><code class="lua">
-local DictPlus = require(game.ServerStorage.MainModule)
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">DictPlus</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ServerStorage</span><span class="p">.</span><span class="n">MainModule</span><span class="p">)</span>
 
-local MyDictionary = {
-    ['Foo'] = {
-        Bar = {},
-        Baz = false
-    },
-    ['Baz'] = {
-        Hi = 'lol'
-    }
-}
+<span class="kd">local</span> <span class="n">Dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">FruitName</span> <span class="o">=</span> <span class="s2">&quot;Lemon&quot;</span><span class="p">,</span>
+    <span class="n">FruitColor</span> <span class="o">=</span> <span class="s2">&quot;Yellow&quot;</span><span class="p">,</span>
+    <span class="n">Sour</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
 
-</code></pre>
-
-<p>If you see <code>MyDictionary</code>, It is refering to this orginal dictionary.</p>
+<p>If you see <code>Dict</code>, It is refering to this orginal dictionary.</p>
 <h2 id="functions">Functions</h2>
 <h3 id="dictplusgetn">DictPlus.getn()</h3>
-<ul>
-<li><code>DictPlus.getn(MyDictionary ['Dictionary'])</code>  </li>
-</ul>
-<h5 id="arguments">Argument(s):</h5>
-<ul>
-<li><code>Argument #1</code> A dictionary</li>
-</ul>
-<p>If the <code>Argument #1</code> is not a dictionary it will fail.</p>
+<div class="highlight"><pre><span></span><code> DictPlus.getn(Dict) --&gt;  Integer
+</code></pre></div>
+
 <h5 id="returns">Return(s)</h5>
 <ul>
-<li><code>Return #1</code> Integer </li>
+<li><code>#1 Return</code> Integer </li>
 </ul>
-<p>In this case this function will return 2</p>
+<p>Will return an <code>Integer</code>. If there are no keys it will return 0.</p>
 <h3 id="dictpluschanged">DictPlus.changed()</h3>
-<ul>
-<li><code>DictPlus.changed(MyDictionary ['Dictionary']):Connect(function(Key, Value)</code></li>
-</ul>
-<h5 id="arguments_1">Argument(s):</h5>
-<ul>
-<li><code>Argument #1</code> A dictionary</li>
-</ul>
-<p>If the <code>Argument #1</code> is not a dictionary it will fail.</p>
+<div class="highlight"><pre><span></span><code>DictPlus.changed(Dict):Connect(function(Key, Value) --&gt; RBXScriptSignal
+</code></pre></div>
+
 <h5 id="connection-arguments">Connection Argument(s)</h5>
 <ul>
 <li><code>Argument #1:</code> The key that has been changed</li>
@@ -621,24 +563,23 @@ local MyDictionary = {
 </ul>
 <h5 id="returns_1">Return(s)</h5>
 <p>Will return a <code>RBXScriptSignal</code> which must be connected to; the two arguments when connected to the event is the
-<code>Key</code> and the <code>NewValue</code>.
-Failure to connect to the event will cause an error.</p>
+<code>Key</code> and the <code>NewValue</code>.</p>
+<div class="admonition caution warning">
+<p class="admonition-title">Caution</p>
+<p>Not connecting to the event will cause error's make sure to connect to this event.</p>
+</div>
 <h2 id="beta-functions">Beta Functions</h2>
-<p>Note: These functions are still in BETA; they will not be fully released until they work fully and until is has
-undergone through testing.</p>
+<div class="admonition note tip">
+<p class="admonition-title">Note</p>
+<p>These functions are still in BETA, they will not be fully released until they work fully and until is has
+ undergone through testing. Use at your own caution.</p>
+</div>
 <h3 id="dictplusadd">DictPlus.add()</h3>
-<ul>
-<li><code>DictPlus.add(Dictionary1, Dictionary2)</code></li>
-</ul>
-<h4 id="arguments_2">Argument(s)</h4>
-<ul>
-<li><code>Argument #1</code> A dictionary</li>
-<li><code>Argument #2</code> A dictionary</li>
-</ul>
-<p>If both of the argument's aren't dictionaries this function will fail.</p>
+<p><code>DictPlus.add(d1, d2) --&gt; Dictionary</code></p>
 <h4 id="returns_2">Return(s)</h4>
+<p>Both arguments must be dictionaries.</p>
 <p>Will return a <code>Dictionary</code>, this Dictionary will be a combination of both keys in the dictionaries, If both
-Dictionaries have the same Key one Key will be erased by the other. </p>
+Dictionaries have the same Key. One of the key's will be replaced by the other. </p>
                 
               
               
