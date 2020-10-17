@@ -1,4 +1,4 @@
-<h1 align="center">Nevermore</h1>
+<h1 align="center">Dict Plus</h1>
 <div align="center">
 	<a href="https://coderrone.github.io/Dict-Plus/">
 		<img src="https://img.shields.io/badge/docs-website-green.svg" alt="Documentation" />
