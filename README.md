@@ -22,6 +22,6 @@ Resulting in saving you massive amounts of code. All written carefully to avoid 
 
 This powerful, non-intrusive module that re-defines the way you work with your dictionaries.
 
-To download click [this](https://github.com/CoderrOne/Dict-Plus/releases/download/v1.1/Dict.Plus.rbxm)
+To download click [this](https://github.com/CoderrOne/Dict-Plus/releases/download/v1.2/Dict.Plus.rbxm)
 
 For more information visit the [site](https://coderrone.github.io/Dict-Plus/)
