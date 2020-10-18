@@ -1,6 +1,7 @@
-local func = {}
 
-function func.concat(t1, t2)
+--  Functions neccessary for the functioning of Dict Plus
+
+function concat (t1, t2)
 	assert(type(t1), 
 		'bad argument #1 expected a table got a: '.. type(t1))
 	assert(type(t2), 
@@ -22,13 +23,12 @@ function func.concat(t1, t2)
 	return t1
 end
 
-
-function func.recurse(t)
+function recurse (t)
 	assert(type(t) == 'table', 'bad argument #1 expected a table got a: ' .. type(t))
 	
 	local a = 0
 	
-	for _ in pairs(t) do
+	for index in pairs(t) do
 		a += 1
 	end
 	
@@ -37,8 +37,7 @@ function func.recurse(t)
 	return a
 end
 
-
-function func.listenToDeepChanges(t, onChange)
+function listenToDeepChanges (t, onChange)
 	assert(type(t) == 'table', 'bad argument #1 expected a table got a: ' .. type(t))
 	assert(type(onChange) == 'function', 'bad argument #2 expected a function got a:  ' .. type(onChange))
 	
@@ -61,11 +60,8 @@ function func.listenToDeepChanges(t, onChange)
 	return setmetatable({}, mt)
 end
 
---[[
-    Credit:
-       Thanks to Stack Overflow and Dev Forum with helping me :)
-
-]]
-
-
-return func
+return {
+	recurse = recurse;
+	concat = concat;
+	listenToDeepChanges = listenToDeepChanges;
+}
