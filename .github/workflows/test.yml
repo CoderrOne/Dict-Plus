@@ -1,25 +1,66 @@
-name: test
+name: Release
 
-on: [push]
+on:
+  push:
+    tags: ["*"]
 
 jobs:
-  test:
+  windows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+
+    - name: Build release binary
+      run: cargo build --verbose --locked --release
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: run-in-roblox-win64
+        path: target/release/run-in-roblox.exe
+
+  macos:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+
+    - name: Install Rust
+      run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+    - name: Build release binary
+      run: |
+        source $HOME/.cargo/env
+        cargo build --verbose --locked --release
+      env:
+        OPENSSL_STATIC: 1
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: run-in-roblox-macos
+        path: target/release/run-in-roblox
+
+  linux:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
-
-    - uses: leafo/gh-actions-lua@v7
+    - uses: actions/checkout@v1
       with:
-        luaVersion: "5.1.5"
+        submodules: true
 
-    - uses: leafo/gh-actions-luarocks@v3
+    - name: Build
+      run: cargo build --locked --verbose --release
+      env:
+        OPENSSL_STATIC: 1
 
-    - name: build
-      run: |
-        luarocks install busted
-        luarocks make
-
-    - name: test
-      run: |
-        busted -o utfTerminal
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: run-in-roblox-linux
+        path: target/release/run-in-roblox
